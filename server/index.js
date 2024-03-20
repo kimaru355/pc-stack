@@ -7,6 +7,7 @@ const AuthRouter = require("./routes/auth");
 const cpuRouter = require("./routes/cpu");
 const gpuRouter = require("./routes/gpu");
 const MotherboardRouter = require("./routes/motherboard");
+const PowerSupplyRouter = require("./routes/powerSupply");
 const defaultRouter = require("./routes/default");
 
 require("dotenv").config();
@@ -19,6 +20,7 @@ app.use("/auth", AuthRouter);
 app.use("/cpus", cpuRouter);
 app.use("/gpus", gpuRouter);
 app.use("/motherboards", MotherboardRouter);
+app.use("/powersupplies", PowerSupplyRouter);
 app.use("/*", defaultRouter);
 
 async function connectDB() {

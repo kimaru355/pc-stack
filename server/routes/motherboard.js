@@ -9,7 +9,7 @@ const MotherboardRouter = express.Router();
 
 MotherboardRouter.get("/", getMotherboards);
 
-MotherboardRouter.get("/Motherboard", getMotherboard);
+MotherboardRouter.get("/motherboard", getMotherboard);
 
 MotherboardRouter.post("/add", addMotherboard);
 
