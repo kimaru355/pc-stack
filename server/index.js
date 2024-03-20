@@ -4,6 +4,7 @@ const cors = require("cors");
 const AuthRouter = require("./routes/auth");
 const UserRouter = require("./routes/user");
 const cpuRouter = require("./routes/cpu");
+const defaultRouter = require("./routes/default");
 
 require("dotenv").config();
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use("/auth", AuthRouter);
 app.use("/users", UserRouter);
 app.use("/cpus", cpuRouter);
+app.use("/*", defaultRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

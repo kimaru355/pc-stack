@@ -15,7 +15,7 @@ const addCpu = async (req, res) => {
     await cpu.save();
     res.status(200).send({ success: true, message: "cpu added" });
   } catch (e) {
-    res.status(409).send({ success: false, message: "Conficting resources" });
+    res.status(400).send({ success: false, message: "Bad Request" });
   }
 };
 
