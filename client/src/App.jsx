@@ -10,7 +10,7 @@ import {
 
 function App() {
   return (
-    <div className="font-mono">
+    <div className="font-mono bg-base-200-">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
