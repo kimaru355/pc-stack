@@ -4,7 +4,7 @@ const MotherboardSchema = mongoose.Schema({
   name: { type: String, required: true }, // ASUS ROG Maximus Z790 Hero
   company: { type: String, required: true }, // Asus
   model: { type: String, required: true }, // Z790
-  tier: { type: Number, required: true }, // Hero
+  tier: { type: String, required: true }, // Hero
   ports: [
     {
       name: { type: String, required: true }, // USB 3.2

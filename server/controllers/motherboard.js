@@ -1,11 +1,12 @@
 const MotherboardModel = require("../models/motherboard.js");
 
 const addMotherboard = async (req, res) => {
-  const { name, model } = req.body;
+  const { name, model, tier } = req.body;
 
   let motherboard = await MotherboardModel.findOne({
     name: name,
     model: model,
+    tier: tier,
   });
 
   if (motherboard) {
