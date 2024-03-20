@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const GpuSchema = mongoose.Schema({
-  name: { type: String, required: true, unique: true }, // Nvidia Geforce RTX 4090
-  company: { type: String, required: true },
+  name: { type: String, required: true }, // Nvidia Geforce RTX 4090
+  company: { type: String, required: true }, // Nvidia
   model: { type: String, required: true, unique: true }, // RTX 4090
   tier: { type: Number, required: true }, // 9
   gen: { type: Number, required: true }, // 4
@@ -11,7 +11,7 @@ const GpuSchema = mongoose.Schema({
   maxRes: [
     {
       res: { type: String, required: true }, // 4K
-      refresh: { typs: Number, required: true }, // 240
+      refresh: { type: Number, required: true }, // 240
     },
   ],
   cache: {

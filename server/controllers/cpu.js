@@ -32,6 +32,9 @@ const getCpu = async (req, res) => {
   let properties = req.body;
 
   let cpu = await CpuModel.find({ ...properties });
+  if (cpu.length === 0) {
+    return res.status(404).send({ success: false, message: "No cpu found" });
+  }
   res.status(200).send({ success: true, message: "cpu found", data: cpu });
 };
 

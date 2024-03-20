@@ -5,8 +5,8 @@ const cpuRouter = express.Router();
 
 cpuRouter.get("/", getCpus);
 
-cpuRouter.post("/add", addCpu);
+cpuRouter.get("/cpu", getCpu);
 
-cpuRouter.post("/cpu", getCpu);
+cpuRouter.post("/add", addCpu);
 
 module.exports = cpuRouter;

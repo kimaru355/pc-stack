@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const PowerSupplySchema = mongoose.Schema({
-  name: { type: String, required: true, unique: true }, // Aigo GP850 80Plus Bronze
+  name: { type: String, required: true }, // Aigo GP850 80Plus Bronze
   company: { type: String, required: true },
   model: { type: String, required: true }, // GP850
   tier: { type: Number, required: true }, // Bronze

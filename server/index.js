@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const AuthRouter = require("./routes/auth");
 const cpuRouter = require("./routes/cpu");
+const gpuRouter = require("./routes/gpu");
 const defaultRouter = require("./routes/default");
 
 require("dotenv").config();
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use("/auth", AuthRouter);
 app.use("/cpus", cpuRouter);
+app.use("/gpus", gpuRouter);
 app.use("/*", defaultRouter);
 
 async function connectDB() {

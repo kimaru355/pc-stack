@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const CpuSchema = mongoose.Schema({
-  name: { type: String, required: true, unique: true }, // Intel Core i9-10900K
+  name: { type: String, required: true }, // Intel Core i9-10900K
   company: { type: String, required: true }, // Nvidia
   model: { type: String, required: true, unique: true }, // i9-10900K
   tier: { type: String, required: true }, // i9
