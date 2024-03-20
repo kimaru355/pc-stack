@@ -24,4 +24,12 @@ const register = async (req, res) => {
   res.status(201).send({ success: true, message: "User registered" });
 };
 
-module.exports = { login, register };
+const getUsers = async (req, res) => {
+  let users = await UserModel.find();
+  let userNumber = users.length;
+  res
+    .status(200)
+    .send({ success: true, message: "Users found", data: userNumber });
+};
+
+module.exports = { login, register, getUsers };
