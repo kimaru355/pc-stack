@@ -22,7 +22,7 @@ const addCpu = async (req, res) => {
 const getCpus = async (req, res) => {
   let cpu = await CpuModel.find();
 
-  if (!cpu) {
+  if (cpu.length === 0) {
     return res.status(404).send({ success: false, message: "No cpus found" });
   }
   res.status(200).send({ success: true, message: "cpus found", data: cpu });

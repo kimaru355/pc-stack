@@ -22,7 +22,7 @@ const addGpu = async (req, res) => {
 const getGpus = async (req, res) => {
   let gpu = await GpuModel.find();
 
-  if (!gpu) {
+  if (gpu.length === 0) {
     return res.status(404).send({ success: false, message: "No gpus found" });
   }
   res.status(200).send({ success: true, message: "gpus found", data: gpu });
@@ -32,6 +32,9 @@ const getGpu = async (req, res) => {
   let properties = req.body;
 
   let gpu = await GpuModel.find({ ...properties });
+  if (gpu.length === 0) {
+    return res.status(404).send({ success: false, message: "No gpu found" });
+  }
   res.status(200).send({ success: true, message: "gpu found", data: gpu });
 };
 

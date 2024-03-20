@@ -2,19 +2,23 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const handleJsonError = require("./controllers/handleJsonError");
 const AuthRouter = require("./routes/auth");
 const cpuRouter = require("./routes/cpu");
 const gpuRouter = require("./routes/gpu");
+const MotherboardRouter = require("./routes/motherboard");
 const defaultRouter = require("./routes/default");
 
 require("dotenv").config();
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(handleJsonError);
+app.use(cors());
 
 app.use("/auth", AuthRouter);
 app.use("/cpus", cpuRouter);
 app.use("/gpus", gpuRouter);
+app.use("/motherboards", MotherboardRouter);
 app.use("/*", defaultRouter);
 
 async function connectDB() {
