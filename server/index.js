@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const handleJsonError = require("./controllers/handleJsonError");
+const handleJsonError = require("./helpers/handleJsonError");
 const AuthRouter = require("./routes/auth");
 const cpuRouter = require("./routes/cpu");
 const gpuRouter = require("./routes/gpu");
