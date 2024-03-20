@@ -1,14 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const UserModel = require("./models/User");
-const AuthRouter = require("./routes/Auth");
+const AuthRouter = require("./routes/auth");
+const UserRouter = require("./routes/user");
+const cpuRouter = require("./routes/cpu");
 
 require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/auth", AuthRouter);
+app.use("/users", UserRouter);
+app.use("/cpus", cpuRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

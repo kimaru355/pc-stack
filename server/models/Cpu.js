@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const CpuSchema = mongoose.Schema({
   name: { type: String, required: true, unique: true }, // Intel Core i9-10900K
+  company: { type: String, required: true }, // Nvidia
   model: { type: String, required: true, unique: true }, // i9-10900K
   tier: { type: String, required: true }, // i9
   gen: { type: Number, required: true }, // 10
@@ -9,7 +10,7 @@ const CpuSchema = mongoose.Schema({
   cores: { type: Number, required: true }, // 10
   threads: { type: Number, required: true }, // 20
   cache: {
-    L1: { type: Number, required: true }, // 2
+    L1: { type: Number, required: true }, // 0.124
     L2: { type: Number, required: true }, // 4
     L3: { type: Number, required: true }, // 20
   },
@@ -24,8 +25,8 @@ const CpuSchema = mongoose.Schema({
   platform: { type: String, required: true }, // Desktop
   maxTurboFreq: { type: Number, required: true }, // 5.3
   baseFreq: { type: Number, required: true }, // 3.7
-  hasIGpu: { type: Boolean, required: true }, // true
-  memType: { type: String, required: true }, // DDR4-2933
+  iGpu: { hasIGpu: { type: Boolean, required: true }, iGpu: String }, // true intel Iris Xe
+  memType: { type: String, required: true }, // DDR4
   memFreq: { type: Number, required: true }, // 5200
 });
 

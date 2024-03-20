@@ -1,8 +1,8 @@
 const express = require("express");
+const { getUsers } = require("../controllers/user");
 
-const app = express();
+const UserRouter = express.Router();
 
-app.get("/users", (req, res) => {
-  console.log("get users");
-  res.status(200).send("Users found");
-});
+UserRouter.get("/", getUsers);
+
+module.exports = UserRouter;
