@@ -28,4 +28,11 @@ const getCpus = async (req, res) => {
   res.status(200).send({ success: true, message: "cpus found", data: cpu });
 };
 
-module.exports = { getCpus, addCpu };
+const getCpu = async (req, res) => {
+  let properties = req.body;
+
+  let cpu = await CpuModel.find({ ...properties });
+  res.status(200).send({ success: true, message: "cpu found", data: cpu });
+};
+
+module.exports = { getCpus, addCpu, getCpu };
